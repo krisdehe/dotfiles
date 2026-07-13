@@ -1,6 +1,15 @@
 ;;; -*- lexical-binding: t -*-
 (require 'package)
 
+(require 'org)
+(require 'org-agenda)
+(require 'org-capture)
+(require 'org-mobile)
+
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
@@ -17,9 +26,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(kanagawa-wave))
+ '(custom-enabled-themes '(batppuccin-mocha))
  '(custom-safe-themes
-   '("d2ab3d4f005a9ad4fb789a8f65606c72f30ce9d281a9e42da55f7f4b9ef5bfc6"
+   '("b0cedf3c6d8fbbf65934e2045dddacff0a031992f2f389215adcb0ca741347c3"
+     "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1"
+     "d2ab3d4f005a9ad4fb789a8f65606c72f30ce9d281a9e42da55f7f4b9ef5bfc6"
      "c20728f5c0cb50972b50c929b004a7496d3f2e2ded387bf870f89da25793bb44"
      "d5c1a09648941993271f1961b4de2801622eea54fb95ce4b2df2fd55d426e52c"
      "daa27dcbe26a280a9425ee90dc7458d85bd540482b93e9fa94d4f43327128077"
@@ -32,10 +43,15 @@
      "2b0fcc7cc9be4c09ec5c75405260a85e41691abb1ee28d29fcd5521e4fca575b"
      "0223215a464167d93b9cfef9b1cdf9b0768ab660f33b3068b647f7b12aa453a0"
      default))
- '(global-display-line-numbers-mode t)
+;; '(global-display-line-numbers-mode t)
+ 
+ ;; Display line numbers in programming modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+
  '(package-selected-packages
-   '(company dracula-theme kanagawa-themes lsp-mode solarized-theme
-	     vscode-dark-plus-theme vterm)))
+   '(batppuccin catppuccin-theme company dracula-theme kanagawa-themes
+		lsp-mode org-bullets solarized-theme
+		vscode-dark-plus-theme vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,10 +61,21 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 
+(setopt org-startup-indented t
+		org-ellipsis " ▼"
+		org-hide-emphasis-markers t)
+
+(setq org-startup-folded t)
+
+;; org-bullets
+(use-package org-bullets
+			 :ensure t
+			 :config
+			 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
 ;; Disabling things
 ;;-----------------------------------------------------------------------
 ;;(menu-bar-mode -1) 
 ;;(toggle-scroll-bar -1) 
 (tool-bar-mode -1)
 
-  
