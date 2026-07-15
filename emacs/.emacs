@@ -5,6 +5,7 @@
 (require 'org-agenda)
 (require 'org-capture)
 (require 'org-mobile)
+(require 'auctex)
 
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
@@ -43,15 +44,11 @@
      "2b0fcc7cc9be4c09ec5c75405260a85e41691abb1ee28d29fcd5521e4fca575b"
      "0223215a464167d93b9cfef9b1cdf9b0768ab660f33b3068b647f7b12aa453a0"
      default))
-;; '(global-display-line-numbers-mode t)
- 
- ;; Display line numbers in programming modes
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-
+ '(display-line-numbers-mode nil t)
  '(package-selected-packages
-   '(batppuccin catppuccin-theme company dracula-theme kanagawa-themes
-		lsp-mode org-bullets solarized-theme
-		vscode-dark-plus-theme vterm)))
+   '(auctex batppuccin catppuccin-theme company dracula-theme
+	    kanagawa-themes lsp-mode org-bullets solarized-theme
+	    vscode-dark-plus-theme vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
