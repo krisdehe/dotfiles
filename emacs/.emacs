@@ -7,6 +7,7 @@
 (require 'org-mobile)
 (require 'auctex)
 (require 'ox-md)
+(require 'ox-pandoc)
 
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
@@ -48,8 +49,8 @@
  '(display-line-numbers-mode nil t)
  '(package-selected-packages
    '(auctex batppuccin catppuccin-theme company dracula-theme
-	    kanagawa-themes lsp-mode org-bullets solarized-theme
-	    vscode-dark-plus-theme vterm)))
+	    kanagawa-themes lsp-mode org-bullets ox-pandoc
+	    solarized-theme vscode-dark-plus-theme vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
