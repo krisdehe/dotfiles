@@ -29,7 +29,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(batppuccin-mocha))
+ '(custom-enabled-themes '(kanagawa-wave))
  '(custom-safe-themes
    '("b0cedf3c6d8fbbf65934e2045dddacff0a031992f2f389215adcb0ca741347c3"
      "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1"
@@ -46,11 +46,12 @@
      "2b0fcc7cc9be4c09ec5c75405260a85e41691abb1ee28d29fcd5521e4fca575b"
      "0223215a464167d93b9cfef9b1cdf9b0768ab660f33b3068b647f7b12aa453a0"
      default))
- '(display-line-numbers-mode nil t)
+
  '(package-selected-packages
    '(auctex batppuccin catppuccin-theme company dracula-theme
 	    kanagawa-themes lsp-mode org-bullets ox-pandoc
-	    solarized-theme vscode-dark-plus-theme vterm)))
+	    solarized-theme vscode-dark-plus-theme vterm))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -58,6 +59,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
 (setopt org-startup-indented t
