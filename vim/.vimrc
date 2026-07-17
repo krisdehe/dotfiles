@@ -1,3 +1,5 @@
+set nocompatible
+
 syntax on
 
 "set background=dark
@@ -17,8 +19,6 @@ set ignorecase
 set smartcase
 
 set mouse=a
-
-set nocompatible
 
 set number
 
@@ -40,6 +40,11 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'menisadi/kanagawa.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin', 'branch': 'main' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'rudism/vim-wombat'
+Plug 'joshdick/onedark.vim'
+Plug 'crusoexia/vim-monokai'
 
 call plug#end()
 
@@ -49,5 +54,10 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 
+"set background=dark
+
 colorscheme kanagawa
+"colorscheme catppuccin_mocha
+"colorscheme wombat 
+"colorscheme onedark 
 
