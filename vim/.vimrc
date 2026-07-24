@@ -45,6 +45,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'rudism/vim-wombat'
 Plug 'joshdick/onedark.vim'
 Plug 'crusoexia/vim-monokai'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'tomasiser/vim-code-dark'
+Plug 'patstockwell/vim-monokai-tasty'
 
 call plug#end()
 
@@ -54,10 +57,13 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 
-"set background=dark
+set background=dark
 
-colorscheme kanagawa
-"colorscheme catppuccin_mocha
+"colorscheme vim-monokai-tasty
+"colorscheme codedark
+"colorscheme monokai
+"colorscheme kanagawa
+colorscheme catppuccin_mocha
 "colorscheme wombat 
 "colorscheme onedark 
 
